@@ -1,0 +1,40 @@
+html.Ω {
+  overflow-y: overlay;
+  overflow-x: hidden;
+}
+
+.Ω ytd-watch-flexy[theater] #player-theater-container {
+  height: 100vh !important;
+  max-height: initial !important;
+  min-height: initial !important;
+}
+
+.Ω ytd-app:not([miniplayer-is-active]) #masthead-container.ytd-app {
+  opacity: 0;
+  transition: opacity .2s 2s;
+}
+
+.Ω #masthead-container.ytd-app:hover {
+  opacity: 1 !important;
+  transition-delay: 0s !important;
+}
+
+.Ω #page-manager.ytd-app {
+  margin-top: 0;
+}
+
+.Ω .caption-window {
+  opacity: .9;
+  /* mix-blend-mode: multiply; */
+  background: none !important;
+  text-shadow: 1px 1px 5px black, 1px 1px 5px black, 1px 1px 5px black, 1px 1px 5px black, 1px 1px 5px black;
+}
+
+.Ω .ytp-caption-segment {
+  background: rgba(0,0,0,.4) !important;
+  border-radius: 5px;
+}
+
+.Ω .ytp-play-progress, .Ω .ytp-scrubber-button {
+  background: #ff01dd;
+}

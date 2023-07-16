@@ -1,0 +1,33 @@
+{
+	"manifest_version": 3,
+	"name": "yt-fullview",
+	"short_name": "yt-fullview",
+	"description": "",
+	"author": "",
+	"homepage_url": "https://github.com/ish-/yt-fullview",
+	"version": "0.1",
+	"version_name": "0.1",
+	"minimum_chrome_version": "63.0",
+	"background": {
+		"service_worker": "background.js",
+		"type": "module"
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://*/*"],
+			"js": ["content.js"]
+		}
+	],
+	"web_accessible_resources": [{
+		"resources": ["content_injection.js"],
+		"matches": ["https://*.youtube.com/*"]
+	}],
+	"permissions": [
+		"activeTab",
+		"tabs",
+		"scripting"
+	],
+	"host_permissions": [
+		"https://*.youtube.com/*"
+	]
+}

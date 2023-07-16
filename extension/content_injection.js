@@ -3,17 +3,33 @@ function toggle (bool = true) {
   document.documentElement.classList.toggle('Ω', bool);
 }
 
-function checkLocation () {
-  console.log('yt-fullview/content_injection.js', 'checkLocation()');
-  toggle(/watch/.test(location.href));
+function handleLocationChange () {
+  console.log('yt-fullview/content_injection.js', 'handleLocationChange()');
+  if (/watch/.test(location.href)) {
+    toggle();
+    const $progress = document.querySelector('.ytp-progress-bar');
+    const $volume = document.querySelector('.ytp-volume-panel');
+    $progress.addEventListener('keydown', refocusPlayer);
+    $volume.addEventListener('keydown', refocusPlayer);
+
+    function refocusPlayer (e) {
+      if (e.code === 'ArrowUp' || e.code === 'ArrowDown') {
+        e.stopImmediatePropagation();
+        e.stopPropagation();
+
+        const $player = document.querySelector('.html5-video-player');
+        $player.focus();
+      }
+    };
+  }
 }
 
-checkLocation();
+handleLocationChange();
 
 window.addEventListener('popstate', () => {
-  checkLocation();
+  handleLocationChange();
 });
-window.addEventListener('load', checkLocation);
+window.addEventListener('load', handleLocationChange);
 
 console.log('yt-fullview/content_injection.js', 'loaded!');
 

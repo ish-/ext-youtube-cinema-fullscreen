@@ -3,7 +3,8 @@ html.Ω {
   overflow-x: hidden;
 }
 
-.Ω ytd-watch-flexy[theater] #player-theater-container {
+/*.Ω ytd-watch-flexy[theater] #player-theater-container {*/
+.Ω #player-wide-container {
   height: 100vh !important;
   max-height: initial !important;
   min-height: initial !important;

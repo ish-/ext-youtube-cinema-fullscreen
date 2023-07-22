@@ -4,7 +4,7 @@ html.Ω {
 }
 
 /*.Ω ytd-watch-flexy[theater] #player-theater-container {*/
-.Ω #player-wide-container {
+.Ω #player-wide-container:has(#player-container) {
   height: 100vh !important;
   max-height: initial !important;
   min-height: initial !important;

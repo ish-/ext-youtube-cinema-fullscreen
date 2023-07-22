@@ -9,7 +9,7 @@ handleLocationChange();
 window.addEventListener('popstate', handleLocationChange);
 window.addEventListener('load', handleLocationChange);
 
-console.log('yt-fullview/content_injection.js', 'loaded!');
+console.log('yt-fullview /content_injection.js', 'loaded!');
 
 function toggle (bool = true) {
   console.log('yt-fullview/content_injection.js', 'toggle()', bool);
@@ -18,8 +18,9 @@ function toggle (bool = true) {
 
 function handleLocationChange () {
   console.log('yt-fullview/content_injection.js', 'handleLocationChange()');
-  toggle();
-  if (/watch/.test(location.href)) {
+  const isWatchPage = /watch/.test(location.href);
+  toggle(isWatchPage);
+  if (isWatchPage) {
     bindControls();
   }
 }
@@ -36,11 +37,7 @@ function bindControls () {
 
   window.addEventListener('keydown', e => {
     if (playerHover) {
-      if (e.code === 'ArrowUp'
-       || e.code === 'ArrowDown'
-       || e.code === 'ArrowLeft'
-       || e.code === 'ArrowRight'
-      ) {
+      if (e.keyCode >= 37 && e.keyCode <= 40) {
         $player.focus();
       }
     }

@@ -18,6 +18,9 @@
 			"js": ["content.js"]
 		}
 	],
+	"options_ui": {
+    "page": "options.html"
+  },
 	"web_accessible_resources": [{
 		"resources": ["content_injection.js"],
 		"matches": ["https://*.youtube.com/*"]
@@ -25,7 +28,8 @@
 	"permissions": [
 		"activeTab",
 		"tabs",
-		"scripting"
+		"scripting",
+		"storage"
 	],
 	"host_permissions": [
 		"https://*.youtube.com/*"

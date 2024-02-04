@@ -1,4 +1,6 @@
-chrome.runtime.onMessage.addListener((msg, sender) => {
+const BRO = globalThis.browser || globalThis.chrome;
+
+BRO.runtime.onMessage.addListener((msg, sender) => {
   const fn = msgs[msg.name];
   if (fn)
     fn(msg, sender);
@@ -15,20 +17,29 @@ const msgs = {
 };
 
 
-function inject ({ tabId }) {
+async function inject ({ tabId }) {
   const script = new Promise(rslv => {
-    chrome.scripting.executeScript({
+    BRO.scripting.executeScript({
       target: { tabId },
       files: ['content_injection.js'],
     }, rslv);
   });
 
   const style = new Promise(rslv => {
-    chrome.scripting.insertCSS({
+    BRO.scripting.insertCSS({
       target: { tabId },
       files: ['style_injection.css'],
     }, rslv);
   });
 
-  return Promise.all([script, style]);
+  let { cssVars: userStyle } = await BRO.storage.local.get(['cssVars']);
+  if (userStyle)
+    userStyle = new Promise(rslv => {
+      BRO.scripting.insertCSS({
+        target: { tabId },
+        css: `.Ω { ${ userStyle } }`,
+      }, rslv);
+    });
+
+  return Promise.all([script, style, userStyle]);
 }

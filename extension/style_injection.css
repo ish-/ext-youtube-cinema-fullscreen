@@ -37,17 +37,20 @@ html.Ω {
 }
 
 .Ω .caption-window {
-  opacity: .9;
+  opacity: var(--ytfs-caption-opacity, .9);
   /* mix-blend-mode: multiply; */
-  background: none !important;
-  text-shadow: 1px 1px 5px black, 1px 1px 5px black, 1px 1px 5px black, 1px 1px 5px black, 1px 1px 5px black;
+  background: var(--ytfs-caption-window-bg, none !important);
+  text-shadow: var(--ytfs-caption-window-text-shadow, 1px 1px 5px black, 1px 1px 5px black, 1px 1px 5px black, 1px 1px 5px black, 1px 1px 5px black);
 }
 
 .Ω .ytp-caption-segment {
-  background: rgba(0,0,0,.4) !important;
-  border-radius: 5px;
+  background: var(--ytfs-caption-segment, rgba(0,0,0,.4)) !important;
+  border-radius: var(--ytfs-caption-segment-border-radius, 5px);
 }
 
-.Ω .ytp-play-progress, .Ω .ytp-scrubber-button {
-  background: rgb(0, 239, 255);
+.Ω .ytp-play-progress {
+  background: var(--ytfs-play-progress-bg, rgb(0, 239, 255));
+}
+.Ω .ytp-scrubber-button {
+  background: var(--ytfs-scrubber-button, rgb(0, 239, 255));
 }

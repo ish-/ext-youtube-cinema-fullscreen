@@ -8,7 +8,7 @@ const msgs = {
   'content:init' ({ frameId }, sender) {
     const { tab } = sender;
 
-    console.log('content:init', frameId);
+    //console.log('content:init', frameId);
 
     inject({ tabId: tab.id });
   },
@@ -30,5 +30,5 @@ function inject ({ tabId }) {
     }, rslv);
   });
 
-  return Promise.all(rslv);
+  return Promise.all([script, style]);
 }

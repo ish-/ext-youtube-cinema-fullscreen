@@ -1,10 +1,10 @@
 {
 	"manifest_version": 3,
-	"name": "yt-fullview",
-	"short_name": "yt-fullview",
+	"name": "YouTube \"Cinema mode\" in truly fullscreen",
+	"short_name": "YouTube fullscreen",
 	"description": "",
 	"author": "",
-	"homepage_url": "https://github.com/ish-/yt-fullview",
+	"homepage_url": "https://github.com/ish-/ext-youtube-cinema-fullscreen",
 	"version": "0.1",
 	"version_name": "0.1",
 	"minimum_chrome_version": "63.0",
@@ -14,7 +14,7 @@
 	},
 	"content_scripts": [
 		{
-			"matches": ["*://*/*"],
+			"matches": ["https://*.youtube.com/*"],
 			"js": ["content.js"]
 		}
 	],

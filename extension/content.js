@@ -1,4 +1,4 @@
-console.log('yt-fullview/content.js', 'loaded!');
+//console.log('ext-youtube-cinema-fullscreen/content.js', 'loaded!');
 
 const frameId = Date.now();
 

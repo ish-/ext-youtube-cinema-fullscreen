@@ -3,14 +3,26 @@ html.Ω {
   overflow-x: hidden;
 }
 
+
+.Ω ytd-watch-flexy[theater] #full-bleed-container {
+  min-height: 100vh !important;
+}
+.Ω ytd-watch-flexy[theater] .html5-video-player {
+  display: flex;
+  align-items: center;
+}
+.Ω ytd-watch-flexy[theater] .html5-main-video {
+  top: initial !important;
+  position: relative !important;
+}
 /*.Ω ytd-watch-flexy[theater] #player-theater-container {*/
-.Ω #player-wide-container:has(#player-container) {
+/*.Ω #player-wide-container:has(#player-container) {
   height: 100vh !important;
   max-height: initial !important;
   min-height: initial !important;
-}
+}*/
 
-.Ω ytd-app:not([miniplayer-is-active]) #masthead-container.ytd-app {
+.Ω ytd-app:has(ytd-watch-flexy[theater]) #masthead-container.ytd-app:not([miniplayer-is-active]) {
   opacity: 0;
   transition: opacity .2s 2s;
 }
@@ -37,5 +49,5 @@ html.Ω {
 }
 
 .Ω .ytp-play-progress, .Ω .ytp-scrubber-button {
-  background: #ff01dd;
+  background: rgb(0, 239, 255);
 }

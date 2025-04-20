@@ -9,15 +9,15 @@ handleLocationChange();
 window.addEventListener('popstate', handleLocationChange);
 window.addEventListener('load', handleLocationChange);
 
-//console.log('ext-youtube-cinema-fullscreen/content_injection.js', 'loaded!');
+// console.log('ext-youtube-cinema-fullscreen/content_injection.js', 'loaded!');
 
 function toggle (bool = true) {
-  //console.log('ext-youtube-cinema-fullscreen/content_injection.js', 'toggle()', bool);
+  // console.log('ext-youtube-cinema-fullscreen/content_injection.js', 'toggle()', bool);
   document.documentElement.classList.toggle('Ω', bool);
 }
 
 function handleLocationChange () {
-  //console.log('ext-youtube-cinema-fullscreen/content_injection.js', 'handleLocationChange()');
+  // console.log('ext-youtube-cinema-fullscreen/content_injection.js', 'handleLocationChange()');
   const isWatchPage = /watch/.test(location.href);
   toggle(isWatchPage);
   if (isWatchPage) {

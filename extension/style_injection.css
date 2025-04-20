@@ -27,6 +27,8 @@ html.Ω {
   transition: opacity .2s 2s;
 }
 
+.Ω .ytp-gradient-bottom { display: none }
+
 .Ω #masthead-container.ytd-app:hover {
   opacity: 1 !important;
   transition-delay: 0s !important;
@@ -44,6 +46,8 @@ html.Ω {
 }
 
 .Ω .ytp-caption-segment {
+  color: #ffffffd9 !important;
+
   background: var(--ytfs-caption-segment, rgba(0,0,0,.4)) !important;
   border-radius: var(--ytfs-caption-segment-border-radius, 5px);
 }

@@ -2,9 +2,15 @@ var frameDepth = (function getDepth(w) {
   return w.parent === w ? 0 : 1 + getDepth(w.parent);
 })(window);
 
-let $player;
+let $player, locationChangedOnce = false;
 
 handleLocationChange();
+const firstChangeFix_int = setInterval(() => {
+  if (!locationChangedOnce)
+    handleLocationChange();
+  else
+    clearInterval(firstChangeFix_int);
+}, 1000);
 
 window.addEventListener('popstate', handleLocationChange);
 window.addEventListener('load', handleLocationChange);
@@ -21,6 +27,7 @@ function handleLocationChange () {
   const isWatchPage = /watch/.test(location.href);
   toggle(isWatchPage);
   if (isWatchPage) {
+    locationChangedOnce = true;
     bindControls();
   }
 }

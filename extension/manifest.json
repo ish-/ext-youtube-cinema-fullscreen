@@ -1,13 +1,13 @@
 {
 	"manifest_version": 3,
-	"name": "YouTube \"Cinema mode\" in truly fullscreen",
-	"short_name": "YouTube fullscreen",
-	"description": "Browser extension that makes YouTube \"Cinema mode\" truly in fullscreen and fix some shortcut focus  defects.",
+	"name": "Fullscreen \"Cinema mode\" on YouTube and other quality-of-life improvements",
+	"short_name": "Fullscreen YouTube and more",
+	"description": "Browser extension that makes YouTube \"Cinema mode\" truly in fullscreen and some shortcut focus fixes.",
 	"author": "ISh- (imwaves@gmail.com)",
 	"homepage_url": "https://github.com/ish-/ext-youtube-cinema-fullscreen",
 	"version": "0.1",
 	"version_name": "0.1",
-	"minimum_chrome_version": "63.0",
+	"minimum_chrome_version": "88.0",
 	"background": {
 		"service_worker": "background.js",
 		"type": "module"
@@ -29,8 +29,6 @@
 		"matches": ["https://*.youtube.com/*"]
 	}],
 	"permissions": [
-		"activeTab",
-		"tabs",
 		"scripting",
 		"storage"
 	],
